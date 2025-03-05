@@ -39,3 +39,19 @@ func reportStream(sr *schema.StreamReader[*schema.Message]) {
 		i++
 	}
 }
+
+func reportStream2(sr *schema.StreamReader[*schema.Message]) (string, error) {
+	defer sr.Close()
+	var result string
+	for {
+		message, err := sr.Recv()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return "", err
+		}
+		result += message.Content
+	}
+	return result, nil
+}

@@ -118,6 +118,9 @@ github.com/cloudwego/eino-ext/components/model/ollama v0.0.0-20250221090944-e8ef
 github.com/cloudwego/eino-ext/components/model/ollama v0.0.0-20250221090944-e8ef7aabbe10/go.mod h1:zjHos5yMjmbBIZunQ1PKD6aY7F3/QjQMBI8TkOFTNU0=
 github.com/cloudwego/eino-ext/components/model/openai v0.0.0-20250221090944-e8ef7aabbe10 h1:DJAInsXygJKCrkahR42QODKkq91nvQCTe60o3MnjsKs=
 github.com/cloudwego/eino-ext/components/model/openai v0.0.0-20250221090944-e8ef7aabbe10/go.mod h1:okkkchYXfoEkv5c0GlwhMdVjIshCzmN3DCcnbOWf7DQ=
+github.com/cloudwego/eino-ext/components/model/openai v0.0.0-20250224084944-a4e81e88cf1b/go.mod h1:EUYfRsFwGKiIuGTkcJW7WaXGk74SvueSWLiVDirLJTI=
+github.com/cloudwego/eino-ext/components/model/openai v0.0.0-20250304061638-54a3ecef47b5 h1:F2k0Omq0btDjamLEjvS5JWnhCAr1fpkweIWAeFBb0uU=
+github.com/cloudwego/eino-ext/components/model/openai v0.0.0-20250304061638-54a3ecef47b5/go.mod h1:EUYfRsFwGKiIuGTkcJW7WaXGk74SvueSWLiVDirLJTI=
 github.com/cloudwego/eino-ext/components/retriever/volc_vikingdb v0.0.0-20250221090944-e8ef7aabbe10 h1:9FrhjrSykZDPsO7gsO2//0+Xqo9E9VM5s1Omz4/aaFY=
 github.com/cloudwego/eino-ext/components/retriever/volc_vikingdb v0.0.0-20250221090944-e8ef7aabbe10/go.mod h1:Fo0UBvCoAvzHTKwgix6GZ4tdf0XCyaxX+fzDbc5l8Wk=
 github.com/cloudwego/eino-ext/components/tool/duckduckgo v0.0.0-20250221090944-e8ef7aabbe10 h1:pXKBHcBceNHNitPqgbg8tGXW5V6klGtXfWrPU8NiyjY=

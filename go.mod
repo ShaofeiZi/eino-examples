@@ -12,7 +12,7 @@ require (
 	github.com/cloudwego/eino-ext/components/model/ark v0.0.0-20250224084944-a4e81e88cf1b
 	github.com/cloudwego/eino-ext/components/model/deepseek v0.0.0-20250221090944-e8ef7aabbe10
 	github.com/cloudwego/eino-ext/components/model/ollama v0.0.0-20250221090944-e8ef7aabbe10
-	github.com/cloudwego/eino-ext/components/model/openai v0.0.0-20250221090944-e8ef7aabbe10
+	github.com/cloudwego/eino-ext/components/model/openai v0.0.0-20250304061638-54a3ecef47b5
 	github.com/cloudwego/eino-ext/components/retriever/volc_vikingdb v0.0.0-20250221090944-e8ef7aabbe10
 	github.com/cloudwego/eino-ext/components/tool/duckduckgo v0.0.0-20250221090944-e8ef7aabbe10
 	github.com/cloudwego/eino-ext/devops v0.1.3
