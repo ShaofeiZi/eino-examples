@@ -19,20 +19,51 @@ package main
 import (
 	"context"
 	"log"
+	"net/http"
 	"os"
 
 	"github.com/cloudwego/eino-ext/components/model/openai"
 	"github.com/cloudwego/eino/components/model"
 )
 
+type customTransport struct {
+	http.RoundTripper
+	headers map[string]string
+}
+
+func (t *customTransport) RoundTrip(req *http.Request) (*http.Response, error) {
+	for key, value := range t.headers {
+		req.Header.Set(key, value)
+	}
+	return t.RoundTripper.RoundTrip(req)
+}
+
 func createOpenAIChatModel(ctx context.Context) model.ChatModel {
-	key := os.Getenv("OPENAI_API_KEY")
+	// 从环境变量获取配置
+	apiKey := os.Getenv("CUSTOM_API_KEY")
+	baseURL := os.Getenv("CUSTOM_API_URL")
+	modelName := os.Getenv("CUSTOM_MODEL_NAME")
+
+	// 初始化默认请求头
+	headers := map[string]string{
+		"api-key":      apiKey,
+		"Content-Type": "application/json",
+	}
+	client := &http.Client{
+		Transport: &customTransport{
+			RoundTripper: http.DefaultTransport,
+			headers:      headers,
+		},
+	}
+
+	// 创建 OpenAI 客户端
 	chatModel, err := openai.NewChatModel(ctx, &openai.ChatModelConfig{
-		Model:  "gpt-4o", // 使用的模型版本
-		APIKey: key,      // OpenAI API 密钥
+		BaseURL:    baseURL,
+		Model:      modelName,
+		HTTPClient: client,
 	})
 	if err != nil {
-		log.Fatalf("create openai chat model failed, err=%v", err)
+		log.Fatalf("create openai chat model failed: %v", err)
 	}
 	return chatModel
 }

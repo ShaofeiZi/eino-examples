@@ -18,10 +18,16 @@ package main
 
 import (
 	"context"
+	"github.com/joho/godotenv"
 	"log"
 )
 
 func main() {
+	// 加载 .env 文件
+	if err := godotenv.Load(); err != nil {
+		log.Printf("Warning: 无法加载 .env 文件: %v\n", err)
+	}
+
 	ctx := context.Background()
 
 	// 使用模版创建messages
@@ -41,5 +47,10 @@ func main() {
 
 	log.Printf("===llm stream generate===\n")
 	streamResult := stream(ctx, cm, messages)
-	reportStream(streamResult)
+	//reportStream(streamResult)
+	r, err := reportStream2(streamResult)
+	if err != nil {
+		return
+	}
+	log.Printf("r: %+v\n\n", r)
 }
